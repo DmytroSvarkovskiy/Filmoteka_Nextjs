@@ -1,0 +1,17 @@
+@import '/styles/styled.scss';
+
+.container{
+    @include flexbox();
+    @include start{
+        max-width: 100%;
+    };
+    @include mobile {
+    max-width: 425px;
+    };
+    @include tablet {
+    max-width: 768px;
+    };
+    @include desktop {
+    max-width: 1280px;
+    };
+    }
