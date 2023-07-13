@@ -1,6 +1,7 @@
 @import 'styles/styled.scss';
 
 .container {
+  padding: 0 10px;
   @include flexbox($direction: column);
   @include start {
     width: 100%;

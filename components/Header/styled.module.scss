@@ -3,7 +3,8 @@
 .header {
   height: 216px;
   width: 100%;
-  @include flexbox();
+  padding: 10px;
+  @include flexbox($direction: column, $justify: start);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -32,5 +33,15 @@
       (min-resolution: 2dppx) {
       background-image: url('/desktop_2x-min.jpg');
     }
+  }
+}
+.title__wrap {
+  @include flexbox($direction: row);
+  gap: 20px;
+  color: $background-color;
+  @include font($fs: 20px);
+  svg {
+    width: 40px;
+    height: 40px;
   }
 }
