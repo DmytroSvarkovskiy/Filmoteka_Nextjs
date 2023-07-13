@@ -1,0 +1,36 @@
+@import 'styles/styled.scss';
+
+.header {
+  height: 216px;
+  width: 100%;
+  @include flexbox();
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('/mob_1x-min.jpg');
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('/mob_2x-min.jpg');
+  }
+
+  @include tablet {
+    background-image: url('/tablet_1x-min.jpg');
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('/tablet_2x-min.jpg');
+    }
+  }
+  @include desktop {
+    background-image: url('/desktop_1x-min.jpg');
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('/desktop_2x-min.jpg');
+    }
+  }
+}

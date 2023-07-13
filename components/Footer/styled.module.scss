@@ -1,7 +1,46 @@
-@import '/styles/styled.scss';
+@import 'styles/styled.scss';
 
-.section{
-@include flexbox();
-border-top:1px solid $primary-orange;
+.section {
+  @include flexbox();
+  border-top: 1px solid $primary-orange;
+  padding: 10px 0;
+  background-color: rgb(228, 228, 228);
+}
 
+.wrapper {
+  display: flex;
+  gap: 30px;
+
+  @include tablet {
+    gap: 80px;
+  }
+  @include desktop {
+    gap: 150px;
+  }
+  a {
+    &:first-child {
+      svg {
+        color: #0088cc;
+      }
+    }
+    &:nth-child(2) {
+      svg {
+        color: #0077b5;
+      }
+    }
+    &:nth-child(3) {
+      svg {
+        color: #3b5998;
+      }
+    }
+    svg {
+      width: 40px;
+      height: 40px;
+      color: #000000;
+    }
+  }
+}
+.title {
+  @include font($fs: 18px, $fw: 500);
+  margin-bottom: 15px;
 }
