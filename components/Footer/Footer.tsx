@@ -4,7 +4,7 @@ import { FaTelegram, FaLinkedin, FaFacebook, FaGithub } from 'react-icons/fa';
 
 export const Footer = () => {
   return (
-    <footer className={styled.section}>
+    <footer className={styled.footer}>
       <Container>
         <h3 className={styled.title}>Communication with the author</h3>
         <div className={styled.wrapper}>
