@@ -1,8 +1,8 @@
 import { GlobalContextProvider } from '@/context';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import 'normalize.css/normalize.css';
 const inter = Inter({ subsets: ['latin'] });
+import { Footer } from '@/components';
 
 export const metadata: Metadata = {
   title: 'Filmoteka',
@@ -15,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <GlobalContextProvider>
         <body className={inter.className}>
           <main>{children}</main>
+          <Footer />
         </body>
       </GlobalContextProvider>
     </html>

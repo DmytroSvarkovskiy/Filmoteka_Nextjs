@@ -1,10 +1,9 @@
 @import '/styles/styled.scss';
 
 .wrap{
-  background-color:$primary-color;
-  height: 50vh;
+
   @include tablet{
-    background-color:red;
+   
   }
   @include font($fs:20px)
 }

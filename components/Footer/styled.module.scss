@@ -1,0 +1,7 @@
+@import '/styles/styled.scss';
+
+.section{
+@include flexbox();
+border-top:1px solid $primary-orange;
+
+}
