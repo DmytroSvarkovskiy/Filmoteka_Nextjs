@@ -2,9 +2,10 @@
 
 .header {
   height: 216px;
+  position: relative;
   width: 100%;
   padding: 10px;
-  @include flexbox($direction: column, $justify: start);
+  @include flexbox($direction: column, $justify: start, $align: start);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -35,13 +36,18 @@
     }
   }
 }
-.title__wrap {
+.title__link {
   @include flexbox($direction: row);
   gap: 20px;
   color: $background-color;
+  text-decoration: none;
   @include font($fs: 20px);
   svg {
     width: 40px;
     height: 40px;
   }
+}
+.link__wrap {
+  width: 100%;
+  @include flexbox($justify: space-between);
 }

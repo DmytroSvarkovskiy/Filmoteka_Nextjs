@@ -1,0 +1,38 @@
+@import 'styles/styled.scss';
+.nav {
+  display: none;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  right: -200px;
+  z-index: 1;
+  transition: right 0.3s;
+  &.visible {
+    display: flex;
+    background-color: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  @include tablet {
+    visibility: visible;
+    position: static;
+    @include flexbox($direction: row, $justify: flex-end);
+  }
+  gap: 15px;
+  a {
+    text-decoration: none;
+    color: $background-color;
+  }
+  .active {
+    color: $primary-orange;
+  }
+}
+.burger {
+  @include tablet {
+    display: none;
+  }
+  color: $primary-orange;
+  width: 30px;
+  height: 30px;
+}
