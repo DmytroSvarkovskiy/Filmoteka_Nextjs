@@ -1,21 +1,41 @@
 @import 'styles/styled.scss';
-.nav {
-  display: none;
-  width: 200px;
+
+.navBarContainer {
+  overflow: hidden;
   position: absolute;
-  top: 0;
-  right: -200px;
   z-index: 1;
+  width: 210px;
+  right: 0;
+  padding: 15px 10px 0 0;
+  top: 0;
+  height: 400px;
+
+  @include flexbox($justify: end, $align: flex-start);
+}
+.nav {
+  width: 200px;
+  padding-top: 15px;
+  position: absolute;
+  right: -200px;
   transition: right 0.3s;
+  background-color: rgb(146, 146, 146, 0.9);
+  @include flexbox($direction: column, $justify: flex-start);
+  height: 400px;
   &.visible {
     display: flex;
-    background-color: red;
+
+    background-color: rgb(146, 146, 146, 0.95);
     position: absolute;
     right: 0;
-    top: 0;
+    width: 200px;
   }
   @include tablet {
-    visibility: visible;
+    &.visible {
+      display: flex;
+      background-color: transparent;
+      position: static;
+      height: auto;
+    }
     position: static;
     @include flexbox($direction: row, $justify: flex-end);
   }
@@ -35,4 +55,16 @@
   color: $primary-orange;
   width: 30px;
   height: 30px;
+}
+.linkWrap {
+  @include flexbox($direction: column);
+  gap: 20px;
+}
+.closeIcon {
+  width: 25px;
+  height: 25px;
+  color: red;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
