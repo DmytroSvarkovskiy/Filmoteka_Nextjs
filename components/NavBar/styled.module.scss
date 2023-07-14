@@ -6,38 +6,42 @@
   z-index: 1;
   width: 210px;
   right: 0;
-  padding: 15px 10px 0 0;
   top: 0;
-  height: 400px;
-
+  height: 100vh;
   @include flexbox($justify: end, $align: flex-start);
+  @include tablet {
+    height: auto;
+  }
 }
+
 .nav {
   width: 200px;
-  padding-top: 15px;
+  padding: 25px 15px 0 0;
   position: absolute;
   right: -200px;
   transition: right 0.3s;
   background-color: rgb(146, 146, 146, 0.9);
   @include flexbox($direction: column, $justify: flex-start);
-  height: 400px;
+  height: 100vh;
+
   &.visible {
     display: flex;
-
     background-color: rgb(146, 146, 146, 0.95);
     position: absolute;
     right: 0;
     width: 200px;
   }
   @include tablet {
+    background-color: transparent;
+    position: static;
+    height: auto;
+    @include flexbox($direction: column, $justify: flex-start, $align: flex-end);
     &.visible {
-      display: flex;
+      @include flexbox($direction: column, $justify: flex-start, $align: flex-end);
       background-color: transparent;
       position: static;
       height: auto;
     }
-    position: static;
-    @include flexbox($direction: row, $justify: flex-end);
   }
   gap: 15px;
   a {
@@ -48,6 +52,7 @@
     color: $primary-orange;
   }
 }
+
 .burger {
   @include tablet {
     display: none;
@@ -55,11 +60,19 @@
   color: $primary-orange;
   width: 30px;
   height: 30px;
+  margin: 15px;
 }
+
 .linkWrap {
+  @include font($fw: 600);
   @include flexbox($direction: column);
+  @include tablet {
+    @include flexbox($direction: row, $align: flex-end);
+  }
+
   gap: 20px;
 }
+
 .closeIcon {
   width: 25px;
   height: 25px;
@@ -67,4 +80,7 @@
   position: absolute;
   left: 10px;
   top: 10px;
+  @include tablet {
+    display: none;
+  }
 }

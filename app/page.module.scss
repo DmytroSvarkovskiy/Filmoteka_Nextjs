@@ -1,7 +1,6 @@
 @import 'styles/styled.scss';
 
 .wrap {
-  min-height: 65vh;
   @include tablet {
   }
   @include font($fs: 20px);
