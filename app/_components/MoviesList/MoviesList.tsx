@@ -4,7 +4,7 @@ import { getMoovies } from '@/services';
 import { Container, Pagination } from '@/components';
 import styled from './styled.module.scss';
 import Image from 'next/image';
-import { FIRST_PART_IMG } from '@/constans.ts';
+import { FIRST_PART_IMG } from '@/constans';
 import { useEffect, useState } from 'react';
 import { mutate } from 'swr';
 
