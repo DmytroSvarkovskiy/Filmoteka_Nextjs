@@ -4,5 +4,5 @@ const token =
 
 export const apiInstance = axios.create({
   baseURL: 'https://api.themoviedb.org/3',
-  headers: { common: { Authorization: `Bearer ${token}` }, Accept: 'application/json' },
+  headers: { common: { Authorization: `Bearer ${token}` } },
 });
