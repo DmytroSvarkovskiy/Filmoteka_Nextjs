@@ -25,6 +25,9 @@ export const MoviesList = () => {
     mutate('movies');
   };
 
+  const userLanguage = navigator.language;
+  console.log(userLanguage);
+
   return (
     <Container>
       {isLoading ? (

@@ -6,7 +6,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    formats:['image/avif','image/webp'],
+    formats:['image/webp','image/avif'],
   remotePatterns: [{
       protocol: 'https',
         hostname: 'image.tmdb.org',
