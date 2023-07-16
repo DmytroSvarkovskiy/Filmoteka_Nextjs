@@ -15,4 +15,7 @@
   @include desktop {
     width: 1280px;
   }
+  @include desktopFull {
+    width: 1920px;
+  }
 }

@@ -19,3 +19,5 @@ export const genres = {
   10752: 'War',
   37: 'Western',
 };
+
+export const FIRST_PART_IMG = 'https://image.tmdb.org/t/p/w500';
