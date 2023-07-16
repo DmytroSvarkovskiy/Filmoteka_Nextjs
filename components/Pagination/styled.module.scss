@@ -3,7 +3,7 @@
   margin: 20px 0;
   .pagination {
     @include flexbox($direction: row);
-    gap: 20px;
+    gap: 15px;
     li {
       cursor: pointer;
       width: 30px;
