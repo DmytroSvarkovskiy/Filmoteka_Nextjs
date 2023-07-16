@@ -1,10 +1,9 @@
 import styles from './page.module.scss';
-import { MoviesList } from './_components/MoviesList';
+import { MoviesList } from './_components/MoviesList/MoviesList';
 export default function Home() {
   return (
-    <div className={styles.wrap}>
-      erhehrerher
+    <section className={styles.wrap}>
       <MoviesList />
-    </div>
+    </section>
   );
 }

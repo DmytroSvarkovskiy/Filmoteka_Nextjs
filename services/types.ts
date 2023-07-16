@@ -20,3 +20,7 @@ export type TResponse = {
   total_pages: number;
   total_results: number;
 };
+export type TRequestParams = {
+  url: string;
+  page: number;
+};

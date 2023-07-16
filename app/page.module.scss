@@ -1,6 +1,7 @@
 @import 'styles/styled.scss';
 
 .wrap {
+  @include flexbox();
   @include tablet {
   }
   @include font($fs: 20px);

@@ -1,0 +1,7 @@
+@import 'styles/styled.scss';
+
+.moviesList {
+  @include flexbox();
+  flex-wrap: wrap;
+  gap: 20px;
+}
