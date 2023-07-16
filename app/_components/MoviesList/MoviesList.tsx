@@ -10,7 +10,7 @@ import { mutate } from 'swr';
 
 export const MoviesList = () => {
   const [page, setPage] = useState(1);
-  const [pageCouns, setPageCount] = useState(1);
+  const [pageCount, setPageCount] = useState(1);
   const dataParams = { url: 'movie/now_playing', page };
   const { data, isLoading, error } = useSwr(['movies', dataParams], ([_, dataParams]) =>
     getMoovies(dataParams)
@@ -18,6 +18,7 @@ export const MoviesList = () => {
   useEffect(() => {
     data?.total_pages && setPageCount(data?.total_pages);
   }, [data?.total_pages]);
+
   const onPageClick = ({ selected }: { selected: number }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setPage(selected + 1);
@@ -44,8 +45,8 @@ export const MoviesList = () => {
           ))}
         </ul>
       )}
-      {data && !isLoading && !error && (
-        <Pagination pageCount={pageCouns} onPageChange={onPageClick} initialPage={+page - 1} />
+      {data && !isLoading && !error && pageCount > 1 && (
+        <Pagination pageCount={pageCount} onPageChange={onPageClick} initialPage={+page - 1} />
       )}
     </Container>
   );
