@@ -2,6 +2,7 @@
 
 .wrap {
   @include flexbox();
+  min-height: 70vh;
   @include tablet {
   }
   @include font($fs: 20px);

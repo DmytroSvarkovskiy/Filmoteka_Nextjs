@@ -1,0 +1,26 @@
+@import 'styles/styled.scss';
+.paginationWrap {
+  margin: 20px 0;
+  .pagination {
+    @include flexbox($direction: row);
+    gap: 20px;
+    li {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      box-shadow: 0px 4px 10px rgba(255, 107, 8, 0.5);
+      border-radius: 6px;
+      @include flexbox();
+      &:hover {
+        box-shadow: 0px 4px 10px rgba(255, 107, 8, 0.9);
+      }
+      transition: box-shadow 0.3s;
+      a {
+        @include flexbox();
+      }
+    }
+  }
+}
+.active {
+  color: $primary-orange;
+}

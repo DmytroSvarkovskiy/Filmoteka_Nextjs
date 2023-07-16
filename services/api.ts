@@ -6,5 +6,6 @@ export const getMoovies = async ({ url, page }: TRequestParams) => {
   return response.data;
 };
 export const searchMovies = async (search: string, page: number) => {
-  const response = apiInstance.get<TResponse>('/movie');
+  const response = await apiInstance.get<TResponse>('/search/movie');
+  return response.data;
 };

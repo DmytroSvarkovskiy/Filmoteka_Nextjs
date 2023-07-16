@@ -1,16 +1,28 @@
 'use client';
 import useSwr from 'swr';
 import { getMoovies } from '@/services';
-import { Container } from '@/components';
+import { Container, Pagination } from '@/components';
 import styled from './styled.module.scss';
 import Image from 'next/image';
 import { FIRST_PART_IMG } from '@/constans.ts';
+import { useEffect, useState } from 'react';
+import { mutate } from 'swr';
 
 export const MoviesList = () => {
-  const dataParams = { url: 'movie/now_playing', page: 1 };
-  const { data, isLoading } = useSwr(['movies', dataParams], ([_, dataParams]) =>
+  const [page, setPage] = useState(1);
+  const [pageCouns, setPageCount] = useState(1);
+  const dataParams = { url: 'movie/now_playing', page };
+  const { data, isLoading, error } = useSwr(['movies', dataParams], ([_, dataParams]) =>
     getMoovies(dataParams)
   );
+  useEffect(() => {
+    data?.total_pages && setPageCount(data?.total_pages);
+  }, [data?.total_pages]);
+  const onPageClick = ({ selected }: { selected: number }) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setPage(selected + 1);
+    mutate('movies');
+  };
 
   return (
     <Container>
@@ -23,7 +35,7 @@ export const MoviesList = () => {
               <Image
                 width={300}
                 height={430}
-                src={item.poster_path.length ? FIRST_PART_IMG + item.poster_path : '/default.jpg'}
+                src={item.poster_path ? FIRST_PART_IMG + item.poster_path : '/default.jpg'}
                 alt={item.title}
                 className={styled.image}
               />
@@ -31,6 +43,9 @@ export const MoviesList = () => {
             </li>
           ))}
         </ul>
+      )}
+      {data && !isLoading && !error && (
+        <Pagination pageCount={pageCouns} onPageChange={onPageClick} initialPage={+page - 1} />
       )}
     </Container>
   );
